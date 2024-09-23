@@ -1,20 +1,22 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-title>Leaflet Map</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <!-- Dropdown untuk memilih basemap -->
+  <ion-item>
+    <ion-label>Basemap</ion-label>
+    <ion-select (ionChange)="onBasemapChange($event)" placeholder="Select Basemap">
+      <ion-select-option value="OpenStreetMap">OpenStreetMap</ion-select-option>
+      <ion-select-option value="Satellite">Satellite</ion-select-option>
+      <ion-select-option value="GoogleStreets">Google Streets</ion-select-option>
+      <ion-select-option value="GoogleHybrid">Google Hybrid</ion-select-option>
+    </ion-select>
+  </ion-item>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+
+  <!-- Area peta -->
+  <div id="mapId" style="width: 100%; height: calc(100vh - 90px);"></div>
 </ion-content>

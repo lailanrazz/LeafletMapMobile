@@ -25,3 +25,8 @@
 #container a {
   text-decoration: none;
 }
+#mapId {
+  width: 100%;
+  height: calc(100vh - 120px); /* Sesuaikan dengan ukuran tampilan */
+  position: relative;
+}
