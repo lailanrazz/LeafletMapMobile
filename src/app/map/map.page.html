@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Map</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div id="map" style="height: 400px;"></div>
+
+  <ion-item>
+    <ion-label position="stacked">Start Location</ion-label>
+    <ion-input id="start-location" placeholder="Enter start location"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">End Location</ion-label>
+    <ion-input id="end-location" placeholder="Enter end location"></ion-input>
+  </ion-item>
+
+  <ion-button expand="block" id="calculate-route">Calculate Route</ion-button>
+
+  <ion-item>
+    <ion-label>Distance</ion-label>
+    <ion-text id="distance">0 km</ion-text>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>CO2 Emission</ion-label>
+    <ion-text id="emission">0 g/km</ion-text>
+  </ion-item>
+</ion-content>

@@ -1,0 +1,225 @@
+// Variables
+$primary-color: #4CAF50;
+$header-bg-color: rgba(0, 0, 0, 0.6);
+$feature-bg-color: #f7f7f7;
+$text-color: #555;
+$white: #fff;
+$shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+$border-radius: 5px;
+$max-width: 1000px;
+
+// Global Styles
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  scroll-behavior: smooth;
+}
+
+// Header Styling
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $header-bg-color;
+  padding: 20px 50px;
+  color: $white;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  box-sizing: border-box;
+
+  .logo h1 {
+    margin: 0;
+    font-size: 1.5rem;
+  }
+
+  nav {
+    display: flex;
+
+    a {
+      color: $white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      font-size: 1rem;
+
+      &:hover {
+        color: $primary-color;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+// Hero Section Styling
+.hero {
+  background: url('https://images.squarespace-cdn.com/content/v1/61c4da8eb1b30a201b9669f2/e2e0e62f-0064-4f86-b9d8-5a55cb7110ca/Korembi-January-2024.jpg') no-repeat center center/cover;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: $white;
+  text-align: center;
+  padding: 0 20px;
+
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    animation: fadeInDown 1s ease-in-out;
+  }
+
+  p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin-bottom: 30px;
+    animation: fadeIn 2s ease-in-out;
+  }
+
+  button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: $white;
+    background-color: $primary-color;
+    border: none;
+    border-radius: $border-radius;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: darken($primary-color, 10%);
+    }
+  }
+}
+
+// Features Section
+.features {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: $feature-bg-color;
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    animation: fadeInUp 1s ease-in-out;
+  }
+
+  .features-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: $max-width;
+    margin: 0 auto;
+
+    .feature-box {
+      background-color: $white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: $shadow;
+      width: 30%;
+      margin: 10px;
+      box-sizing: border-box;
+      transition: transform 0.3s ease-in-out;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+
+      h3 {
+        margin-bottom: 10px;
+        font-size: 1.5rem;
+      }
+
+      p {
+        font-size: 1rem;
+        color: $text-color;
+      }
+    }
+  }
+}
+
+// Responsive Styles
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    padding: 15px 20px;
+
+    nav {
+      flex-direction: column;
+      margin-top: 10px;
+
+      a {
+        margin: 5px 0;
+        font-size: 0.9rem;
+      }
+    }
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .features-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .feature-box {
+    width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 0.9rem;
+  }
+
+  .hero button {
+    font-size: 0.9rem;
+  }
+
+  .features h2 {
+    font-size: 1.5rem;
+  }
+}
+
+// Animations
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

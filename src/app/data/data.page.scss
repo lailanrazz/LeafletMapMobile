@@ -1,0 +1,89 @@
+.dashboard-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background-color: #4a5a47; /* Warna latar belakang gelap tapi tetap hangat */
+  border-radius: 15px;
+  padding: 15px;
+  color: #f1f1e6; /* Warna teks terang untuk kontras dengan latar belakang */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sedikit lebih gelap untuk menambah kedalaman */
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  h3 {
+    font-size: 1.2rem;
+    margin: 0;
+    color: #e4e7d1; /* Teks header lebih terang untuk kontras */
+  }
+  ion-icon {
+    font-size: 2rem;
+    color: #f4d03f; /* Warna kuning cerah untuk ikon */
+  }
+}
+
+.card-content {
+  p {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #e4e7d1; /* Warna teks utama terang */
+  }
+
+  span {
+    font-size: 0.9rem;
+    color: #34c759; /* Warna hijau cerah untuk teks positif */
+
+    &.positive {
+      color: #34c759; /* Warna hijau untuk nilai positif */
+    }
+
+    &.negative {
+      color: #ff3b30; /* Warna merah cerah untuk nilai negatif */
+    }
+  }
+}
+
+.humidity-card ion-progress-bar {
+  margin-top: 10px;
+  --progress-background: rgba(241, 241, 230, 0.3); /* Background progress bar kontras dengan latar belakang */
+}
+
+.air-quality-card canvas {
+  margin-top: 20px;
+  max-height: 300px;
+}
+
+@media (max-width: 768px) {
+  .row {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: 10px;
+  }
+
+  .card-header h3 {
+    font-size: 1rem;
+  }
+
+  .card-content p {
+    font-size: 1.2rem;
+  }
+}

@@ -66,7 +66,7 @@ export class HomePage {
     `;
     const popup = L.popup().setContent(popupContent);
 
-    // Menambahkan marker dengan ikon merah di Semarang
+
     const marker = L.marker([-6.966667, 110.416664], { icon: Icon })
       .bindPopup(popup)
       .addTo(this.map)

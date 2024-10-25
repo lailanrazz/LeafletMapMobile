@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-title>Dashboard</ion-title>
+    <ion-buttons slot="end">
+      <ion-searchbar placeholder="Cari data di sini..." animated></ion-searchbar>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="dashboard-container">
+    <!-- First Row -->
+    <div class="row">
+      <div class="card emission-card" *ngFor="let emission of emissions">
+        <div class="card-header">
+          <h3>{{ emission.name }}</h3>
+          <ion-icon [name]="emission.icon"></ion-icon>
+        </div>
+        <div class="card-content">
+          <p>{{ emission.value }}</p>
+          <span [class.positive]="emission.change > 0" [class.negative]="emission.change < 0">
+            {{ emission.change }}% {{ emission.change > 0 ? 'naik' : 'turun' }} dari kemarin
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Second Row -->
+    <div class="row">
+      <!-- Gas Domination Section -->
+      <div class="card domination-card">
+        <h2>Dominasi Gas Buang</h2>
+        <ul>
+          <li *ngFor="let gas of gasDominations">{{ gas.name }} - {{ gas.percentage }}%</li>
+        </ul>
+      </div>
+
+      <!-- Temperature Change Section -->
+      <div class="card temperature-card">
+        <h2>Perubahan Suhu</h2>
+        <p>Bulan Lalu: 31°C</p>
+        <p>Bulan Ini: 30°C</p>
+      </div>
+    </div>
+
+    <!-- Third Row -->
+    <div class="row">
+      <!-- Humidity Section -->
+      <div class="card humidity-card">
+        <h2>Kelembapan</h2>
+        <ion-progress-bar value="0.86" color="tertiary"></ion-progress-bar>
+        <p>86% Panas yang berlebihan</p>
+      </div>
+
+      <!-- Air Quality Analysis -->
+      <div class="card air-quality-card">
+        <h2>Analisis Kualitas Udara</h2>
+        <canvas id="airQualityChart"></canvas>
+      </div>
+    </div>
+  </div>
+</ion-content>

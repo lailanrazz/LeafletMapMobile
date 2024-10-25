@@ -5,7 +5,14 @@
   "projects": {
     "app": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@ionic/angular-toolkit:component": {
+          "styleext": "scss"
+        },
+        "@ionic/angular-toolkit:page": {
+          "styleext": "scss"
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -136,14 +143,11 @@
   "cli": {
     "schematicCollections": [
       "@ionic/angular-toolkit"
-    ]
+    ],
+    "analytics": "405c2ccb-8e3a-46dc-8cb4-7246e678599c"
   },
-  "schematics": {
-    "@ionic/angular-toolkit:component": {
-      "styleext": "scss"
-    },
-    "@ionic/angular-toolkit:page": {
-      "styleext": "scss"
-    }
-  }
+  "styles": [
+    "node_modules/bootstrap/dist/css/bootstrap.min.css",
+    "src/styles.scss"
+  ]
 }
